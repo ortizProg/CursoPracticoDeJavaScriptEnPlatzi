@@ -47,14 +47,15 @@ function ladosTriangulo(base, lado1, lado2){
 // Perimetro del triangulo
 
 function perimetroTriangulo(base, lado1, lado2) {
-    return base + lado1 + lado2;
+    const resultado = base + lado1 + lado2;
+    return resultado;
 }
 // console.log("El perimetro del triangulo es de: " + perimetroTriangulo + "cm");
 
 // Area del triangulo
 
 function areaTriangulo(base, altura) {
-    return (base * altura) / 2;
+    return (base * altura) / 2 + "cm^2";
 }
 // console.log("El área del triangulo es de: " + areaTriangulo + "cm^2")
 
@@ -114,3 +115,64 @@ function areaCirculo(radio) {
 // console.groupEnd();
 
 // Fin del algoritmo el circulo
+
+// Inicio del algoritmo para funciones junto HTML
+
+// Inicio funciones del cuadrado
+
+function calcularPerimetroCuadrado() {
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+}
+
+function calcularAreaCuadrado() {
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+    const area = areaCuadrado(value);
+    alert(area + "cm^2");
+}
+
+// Fin de las funciones del cuadrado
+
+// Inicio de las funciones del triangulo
+
+function calcularPerimetroTriangulo() {
+    const inputLado1 = document.getElementById("inputTrianguloLado1");
+    const inputLado2 = document.getElementById("inputTrianguloLado2");
+    const inputBase = document.getElementById("inputTrianguloBase");
+    const valueLado1 = Number(inputLado1.value);
+    const valueLado2 = Number(inputLado2.value);
+    const valueBase = Number(inputBase.value);
+    const perimetro = perimetroTriangulo(valueBase, valueLado2, valueLado1);
+    alert(perimetro);
+}
+function calcularAreaTriangulo() {
+    const inputBase = document.getElementById("inputTrianguloBase");
+    const inputAltura = document.getElementById("inputTrianguloAltura");
+    const valueBase = Number(inputBase.value);
+    const valueAltura = Number(inputAltura.value);
+    if (valueBase != 0 && valueAltura != 0) {
+        alert(areaTriangulo(valueBase, valueAltura));
+    } else if (valueBase == 0){
+        alert("Falta la medida de la base");
+    } else {
+        alert("Falta la medida de la altura");
+    }
+}
+
+//Final de las funciones del triangulo
+
+// Inicio de las funciones del circulo
+
+function calcularDiametroCirculo() {
+    input = document.getElementById("inputCirculo");
+    value = Number(input.value);
+    alert(diametroCirculo(value));
+}
+function calcularAreaCirculo() {
+    input = document.getElementById("inputCirculo");
+    value = Number(input.value);
+    alert(areaCirculo(value));
+}
