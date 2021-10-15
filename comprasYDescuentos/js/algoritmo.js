@@ -20,7 +20,8 @@ function onclickCalcular() {
 
     // Escribir resultado en HTML
 
-    const resultado = document.getElementById("resultado");
-    resultado.innerHTML = "$" + resultadoDeLaOperacion;
+    const resultado = document.getElementById("inputResultado");
+    const valueResultado = resultadoDeLaOperacion;
+    resultado.value = valueResultado;
 }
 
