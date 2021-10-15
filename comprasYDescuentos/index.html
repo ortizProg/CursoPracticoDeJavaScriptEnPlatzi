@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 930px)">
+    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1070px)">
+    <title>Compras y descuentos || Curso de platzi</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section class="section-formulario">
+            <div class="formulario--container">
+                <section class="left-section">
+                    <img class="img-money" src="./pics/SignoDeDinero.png" alt="">
+                    <h1 class="left-section--title">Calcula tu descuento</h1>
+                    <footer>
+                        <p>Desarrollado con amor por ortizProg</p>
+                    </footer>
+                </section>
+                <section class="right-section">
+                    <form class="inputs--container">
+                        <div class="input--container">
+                            <label for="inputPrice">Precio:</label>
+                            <div class="out-input">
+                                <input type="number" id="inputPrice" name="inputPrice" />
+                            </div>    
+                        </div>
+                        <div class="input--container">
+                            <label for="inputDescuento">Descuento:</label>
+                            <div class="out-input">
+                                <input type="number" id="inputDescuento" name="inputDescuento" />
+                            </div>
+                                
+                        </div>
+                        <div class="button--container">
+                            <button type="button" onclick="onclickCalcular()">Calcular</button>
+                        </div>
+                        <div class="input--container">
+                            <label for="inputResultado">Precio con el descuento:</label>
+                            <div class="out-input">
+                                <input type="number" id="inputResultado" name="inputResultado" readonly/>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script src="./js/algoritmo.js"></script>
+</body>
+</html>
