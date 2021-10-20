@@ -10,22 +10,28 @@ html {
 header {
     display: flex;
     flex-flow: nowrap;
-    align-items: ;
     width: 100vw;
     height: 50px;
-    background-color: red;
 }
 header .logo--container {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    background-color: blue;
-    width:40%;
-    
+    width:30%;
+}
+.logo--container figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.logo--container .logo--img {
+    height: 100px;
 }
 header .nav--container {
-    width: 60%;
+    width: 70%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -33,11 +39,36 @@ header .nav--container {
 }
 .nav--container .nav-list--container {
     display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
     list-style: none;
+
     
 }
 .nav-list--container .nav-list--item {
-    padding: 6px;
-    font-size: 1.5rem;
+    padding: 0px 10px;
+}
+.nav-list--container .nav-list--item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.7rem;
     
+}
+/* Css del perfil */
+.nav-list--container .nav-list--perfil {
+    background-color: #000;
+    width: 33px;
+    height: 33px;
+    border-radius: 15px;
+}
+/* Css del carrito */
+.nav-list--container .carrito--img {
+    width: 25px;
+} 
+/* Inicio del estilo del main */
+main {
+    background-color: rgb(243, 243, 243);
+    width: 100vw;
+    height: 100vh;
 }
