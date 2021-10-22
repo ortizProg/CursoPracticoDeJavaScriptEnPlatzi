@@ -71,3 +71,101 @@ main {
     width: 100vw;
     height: 100vh;
 }
+/* Inicio del estilo de la section producto */
+.main-product--section {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.main-product--section .producto--container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 700px;
+}
+.producto-name--container {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.producto-name--container .producto--name {
+    font-size: 2.2rem;
+    color: #3f3f3f;
+
+}
+.producto-image--container {
+    width: 100%;
+    height: 200px;
+    box-shadow: 1px 1px 6px #000;
+}
+.producto-image--container .producto--image {
+    width: 100%;
+    height: 100%;
+}
+/* css del contenedor del input del cupon */
+.main-product--section .compra--container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.compra--container .inputs-compra--container {
+    width: 100%;
+    
+}
+.inputs-compra--container .cupon-input--container {
+    width: 100%;
+}
+.cupon-input--container label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #3f3f3f;
+}
+.cupon-input--container input {
+    width: 120px;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-left: 3px;
+    background-color: rgb(243, 243, 243);
+    outline: none;
+    font-size: 1.5rem;
+    color: #3f3f3f;
+}
+.cupon-input--container .cupon-input--button
+{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #3f3f3f;
+    background-color: #FFF;
+    padding: 5px;
+    margin-left: 3px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    cursor: pointer;
+    box-shadow: 1px 3px 3px #000;
+}
+.precio--container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 10px;
+}
+.precio--container .precio--title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #3f3f3f;
+}
+.precio--container .precio--value {
+    font-size: 4.6rem;
+    font-weight: 900;
+    margin-left: 30px; 
+    color: rgb(20, 20, 20);
+}
+.precio--container .precio--descuento {
+    font-size: 4.6rem;
+    font-weight: 900;
+    margin-left: 30px;
+    color: blue;
+}
