@@ -56,7 +56,7 @@ header .nav--container {
     
 }
 /* Css del perfil */
-.nav-list--container .nav-list--perfil {
+.nav-list--container .nav-list--perfil img {
     background-color: #000;
     width: 33px;
     height: 33px;
