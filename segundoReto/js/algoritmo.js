@@ -79,7 +79,7 @@ function onclickPrecioConDescuesto() {
                 if (codigoCupon.codigo === valueCodigo) {
                     console.log(valueCodigo);
                     return codigoCupon.codigo;
-                } else ( codigoCupon.codigo !== valueCodigo) {
+                } else {
                     cuponError("El cupón no existe por favor verificar el codigo, recuerda usar los '-'. Por ejemplo: AAA-AAA-AAA ");
                     return undefined;
                 }
