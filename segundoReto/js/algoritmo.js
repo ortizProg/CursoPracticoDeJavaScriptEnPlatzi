@@ -75,23 +75,22 @@ function onclickPrecioConDescuesto() {
             }
             // Variable que busca el codigo del cupon
         
-            const encuentraElCupon = cuponesDisponibles.find(function(codigoCupon) {
-                if (codigoCupon.codigo === valueCodigo) {
-                    console.log(valueCodigo);
-                    return codigoCupon.codigo;
-                } else {
-                    cuponError("El cupón no existe por favor verificar el codigo, recuerda usar los '-'. Por ejemplo: AAA-AAA-AAA ");
-                    return undefined;
-                }
-        
+            var encuentraElCupon = cuponesDisponibles.find(function(codigoCupon) {
+                return codigoCupon.codigo === valueCodigo;
             });
-        
-            // Verificación 
-        
-            if (encuentraElCupon !== undefined) {
-                precioConDescuento(precio, encuentraElCupon);
-                cuponesUsados.push(encuentraElCupon.codigo);
-                unicoCuponUsado = true;
+            if (encuentraElCupon === undefined) {
+                cuponError("El cupón no existe por favor verificar el codigo, recuerda usar los '-'. Por ejemplo: AAA-AAA-AAA ");
+                encuentraElCupon = undefined;
+            } else {
+                // Verificación 
+
+                const codigoCupon = encuentraElCupon.codigo;
+
+                if (encuentraElCupon !== undefined) {
+                    precioConDescuento(precio, encuentraElCupon);
+                    cuponesUsados.push(codigoCupon);
+                    unicoCuponUsado = true;
+                }
             }
         } else {
             cuponError("El cupón ya ha sido utilizado.");
