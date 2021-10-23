@@ -33,6 +33,13 @@ elementoPrecio.innerText = "$" + precio;
 
 // Error en el cupon
 
+// Hacer desaparecer cupon error 
+
+function desaparecerCuponError() {
+    const cuponSectionError = document.getElementById("cuponError");
+    const desaparecerSectionError = cuponSectionError.style.display = "none";
+    return desaparecerSectionError;
+}
 
 // hacer aparecer cupon error 
 
@@ -52,8 +59,8 @@ function precioConDescuento(precio, cupon) {
     // Restar cantidad de cupones
     if (cuponesDisponibles > 0) {
         const porcentajeMenosDescuento = (100 - descuentoDelCupon);
+        desaparecerCuponError();
         const resultado = (precio * porcentajeMenosDescuento) / 100;
-        cuponError.innerText = "";
         llamarDescuento.innerText = "$" + resultado;
         cuponUsado.cantidad--;
     } else if (cuponesDisponibles <= 0) {
