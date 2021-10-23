@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: Helvetica;
+}
+.section-formulario {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:100vh; 
+   /* La sintaxis vieja, obsoleta, pero todavía necesaria, con prefijo, para Opera y navegadores basados en WebKit-based */
+    background: -prefix-linear-gradient(top, blue, white);
+    /* La nueva sintaxis necesaria para navegadores apegados al estandar (IE 10 y Firefox 10 en adelante), sin prefijo */
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(26, 26, 26), rgb(0, 0, 0)); 
+        
+}
+.formulario--container {    
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    height: 95%;
+    border-radius: 15px;
+    background-color: rgb(26, 26, 26);
+}
+.formulario--container .left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35%;
+    color: #FFF;
+}
+.left-section .img-money {
+    width: 90px;
+    height: 90px;
+} 
+.left-section .left-section--title {
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+}
+/* Inicio de la right section */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    height:65%;
+}
+.right-section .inputs--container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    min-width: 240px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: rgb(19, 19, 19);
+}
+.inputs--container .input--container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    flex-wrap: nowrap;
+    margin: 10px;
+}
+.input--container label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #FFF;
+}
+/* Estilo de los inputs */
+.input--container .out-input {
+    background-color: #FFF;
+    padding: 8px;
+    border-radius: 5px;
+}
+.input--container input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.input--container input:focus {
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
+/* Estilos del button */
+.button--container {
+    width: 50%;
+    min-width: 100px;
+}
+.button--container button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    background: none;
+    border: 1px solid #FFF;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: #FFF;
+    font-weight: bolder;
+    padding: 8px 0px;
+}
+.button--container button:hover {
+    transform: translateY(-1px);
+    cursor: pointer;
+}
+footer p {
+    font-size: 1.3rem;
+    
+}
