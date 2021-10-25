@@ -46,16 +46,17 @@
                 </div>
             </div>
             <div class="compra--container">
-                <form class="inputs-compra--container" action="">
+                <form class="inputs-compra--container">
                     <div class="cupon-input--container">
                         <label for="inputCupon">Usar cupón:</label>
                         <input id="inputCupon" name="inputCupon" type="text" placeholder="Codigo del cupón">
-                        <button class="cupon-input--button" type="button" onclick="">Usar</button>
+                        <button class="cupon-input--button" type="button" onclick="onclickPrecioConDescuesto()">Usar</button>
                     </div>
                     <div class="precio--container">
                         <p class="precio--title">Precio:</p>
-                        <h2 class="precio--value" id="precioDelProducto">30$</h2>
+                        <h2 class="precio--value" id="precioDelProducto"></h2>
                         <h2 class="precio--descuento" id="precioConDescuento"></h2>
+                        <p class="precio--errorCupon" id="cuponError"></p>
                     </div>
                 </form>
             </div>

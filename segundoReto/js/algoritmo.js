@@ -5,7 +5,7 @@ var cuponesDisponibles = [
         codigo: "ABC-DFG-HIJ",
         nombreCupon: "Cupón de fidelidad",
         descuento: 10,
-        cantidad: 1,
+        cantidad: 100,
     },
     {
         idCupon: 2,
@@ -15,34 +15,96 @@ var cuponesDisponibles = [
         cantidad: 100,
     }
 ];
+// Cupones Usados por el usuario 
+
+var unicoCuponUsado = false;
+var cuponesUsados = [];
+
 
 // Precio
 
-const precio = 100;
+const elementoPrecio = document.getElementById("precioDelProducto");
+const precio = 400;
+
+
+// Escribir el precio del producto en html
+
+elementoPrecio.innerText = "$" + precio;
+
+// Error en el cupon
+
+// Hacer desaparecer cupon error 
+
+function desaparecerCuponError() {
+    const cuponSectionError = document.getElementById("cuponError");
+    const desaparecerSectionError = cuponSectionError.style.display = "none";
+    return desaparecerSectionError;
+}
+
+// hacer aparecer cupon error 
+
+function cuponError(mensaje) {
+    const cuponSectionError = document.getElementById("cuponError");
+    const aparecerSectionCupon = cuponSectionError.style.display = "block";
+    aparecerSectionCupon;
+    return cuponSectionError.innerText = mensaje;
+}
 
 function precioConDescuento(precio, cupon) {
     const cuponUsado = cupon;
     const descuentoDelCupon = cuponUsado.descuento;
     var cuponesDisponibles = cuponUsado.cantidad;
+    const llamarDescuento = document.getElementById("precioConDescuento");
 
     // Restar cantidad de cupones
     if (cuponesDisponibles > 0) {
         const porcentajeMenosDescuento = (100 - descuentoDelCupon);
+        desaparecerCuponError();
         const resultado = (precio * porcentajeMenosDescuento) / 100;
+        llamarDescuento.innerText = "$" + resultado;
         cuponUsado.cantidad--;
     } else if (cuponesDisponibles <= 0) {
-        console.log("Ya no hay disponibilidad de este cupón.");
+        cuponError("Ya no hay disponibilidad de este cupón.");
     }
 }
 
 function onclickPrecioConDescuesto() {
-    const inputCodigo = document.getElementById("inputCodigo");
+    const inputCodigo = document.getElementById("inputCupon");
     const valueCodigo = inputCodigo.value;
+    
+    // Comprobar si el cupon ya lo uso el usuario
+    const buscarCuponesUsados = cuponesUsados.indexOf(valueCodigo);
+    if (unicoCuponUsado === false) {    
+        if (buscarCuponesUsados === -1) {
 
-    // Variable que busca el codigo del cupon
+            if (valueCodigo === undefined) {
+                cuponError("Por favor ingresa un codigo valido");
+            }
+            // Variable que busca el codigo del cupon
+        
+            var encuentraElCupon = cuponesDisponibles.find(function(codigoCupon) {
+                return codigoCupon.codigo === valueCodigo;
+            });
+            if (encuentraElCupon === undefined) {
+                cuponError("El cupón no existe por favor verificar el codigo, recuerda usar los '-'. Por ejemplo: AAA-AAA-AAA ");
+                encuentraElCupon = undefined;
+            } else {
+                // Verificación 
 
-    const encuentraElCupon = cuponesDisponibles.find(function(codigoCupon) {
-        return codigoCupon.codigo === valueCodigo;
-    });
-    precioConDescuento(precio, encuentraElCupon);
+                const codigoCupon = encuentraElCupon.codigo;
+
+                if (encuentraElCupon !== undefined) {
+                    precioConDescuento(precio, encuentraElCupon);
+                    cuponesUsados.push(codigoCupon);
+                    unicoCuponUsado = true;
+                }
+            }
+        } else {
+            cuponError("El cupón ya ha sido utilizado.");
+        }
+
+    } else {
+        cuponError("Ya has aplicado un cupón a este producto.")
+    }
 }
+
